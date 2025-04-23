@@ -1,0 +1,8 @@
+Model Information:
+* title:	Large Solar Panel Array
+* source:	https://sketchfab.com/3d-models/large-solar-panel-array-e25771ea77a6408583acc90471ddab71
+* author:	Harri Snellman (https://sketchfab.com/rivetech)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

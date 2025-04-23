@@ -1,34 +1,42 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Canvas, useFrame } from '@react-three/fiber'
+import * as THREE from 'three'
 import './App.css'
+import { Scroll, ScrollControls } from '@react-three/drei'
+import Objects from './components/MenuItemObjects'
+import Html from './components/MenuItemHTML'
 
-function App() {
-  const [count, setCount] = useState(0)
+const MenuItems = () => {
+  useFrame(({ pointer, camera }) => {
+    camera.position.x = THREE.MathUtils.lerp(camera.position.x, pointer.x * 0.5, 0.03)
+    camera.position.y = THREE.MathUtils.lerp(camera.position.y, pointer.y * 0.8, 0.01)
+    camera.position.z = THREE.MathUtils.lerp(camera.position.z, Math.max(4, Math.abs(pointer.x * pointer.y * 8)), 0.01)
+    camera.rotation.y = THREE.MathUtils.lerp(camera.rotation.y, pointer.x * -Math.PI * 0.025, 0.001)
+  })
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  <ScrollControls pages={2}>
+    <Scroll>
+      <Objects/>
+    </Scroll>
+    <Scroll html>
+      <Html/>
+    </Scroll>
+  </ScrollControls>
+  )
+}
+
+function App() {
+
+  return (
+        
+        <Canvas dpr={[1, 2]}>  
+          <mesh position={[0 ,0 ,-20]}>
+            <planeGeometry args={[60,60, 20, 20]}/>
+            <meshBasicMaterial color="blue" wireframe side={THREE.DoubleSide}/>
+          </mesh>
+          <MenuItems/>
+        </Canvas>
   )
 }
 

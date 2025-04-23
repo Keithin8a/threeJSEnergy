@@ -1,0 +1,8 @@
+Model Information:
+* title:	Torre o turbina de energía eólica
+* source:	https://sketchfab.com/3d-models/torre-o-turbina-de-energia-eolica-83ab5c05ed644cb78833ef6955ee73bb
+* author:	nelsonjdiaz89 (https://sketchfab.com/nelsonjdiaz89)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
