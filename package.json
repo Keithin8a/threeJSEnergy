@@ -4,7 +4,9 @@
   "description": "A repository using a dataset about renewable energies and presented using ThreeJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "setup": "cd ./apps/server && npm run setup",
+    "start:client": "cd ./apps/client && npm run dev",
+    "start:server": "cd ./apps/server && npm run start"
   },
   "author": "",
   "license": "ISC"

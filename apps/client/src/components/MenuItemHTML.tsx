@@ -1,6 +1,6 @@
-import { useThree } from "@react-three/fiber"
+import { Link, NavLink } from "react-router"
 
-const Html = () => {
+const MenuItemHtml = () => {
 
     return (
         <div
@@ -9,7 +9,7 @@ const Html = () => {
             fontSize: '50px',
             lineHeight: 0.75,
             }}>
-            <a href="/bob">
+            <a href="/Solar">
                 <h1
                     style={{
                         position: 'absolute',
@@ -19,25 +19,27 @@ const Html = () => {
                     }}>
                     Discover Solar
                 </h1>
-        </a>
+            </a>
         <hr style={{
             position: "absolute",
             top: '75vh',
             color: "gold",
             width: '100vw'
         }}/>
-            <h1
-            style={{
-                position: 'absolute',
-                top: '90vh',
-                left: '50vw',
-                color: '#f4b677',
-                margin: 0,
-            }}>
-            Discover Wind
-            </h1>
+            <a href="/Wind">
+                <h1
+                style={{
+                    position: 'absolute',
+                    top: '90vh',
+                    left: '50vw',
+                    color: '#f4b677',
+                    margin: 0,
+                }}>
+                Discover Wind
+                </h1>
+            </a>
       </div>
     )
 }
 
-export default Html
+export default MenuItemHtml

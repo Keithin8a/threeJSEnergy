@@ -1,10 +1,8 @@
-import { useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import './App.css'
 import { Scroll, ScrollControls } from '@react-three/drei'
-import Objects from './components/MenuItemObjects'
-import Html from './components/MenuItemHTML'
+import MenuItemObjects from '../components/MenuItemObjects'
+import MenuItemHTML from '../components/MenuItemHTML'
 
 const MenuItems = () => {
   useFrame(({ pointer, camera }) => {
@@ -17,10 +15,10 @@ const MenuItems = () => {
   return (
   <ScrollControls pages={2}>
     <Scroll>
-      <Objects/>
+      <MenuItemObjects/>
     </Scroll>
     <Scroll html>
-      <Html/>
+      <MenuItemHTML/>
     </Scroll>
   </ScrollControls>
   )
@@ -29,14 +27,13 @@ const MenuItems = () => {
 function App() {
 
   return (
-        
-        <Canvas dpr={[1, 2]}>  
-          <mesh position={[0 ,0 ,-20]}>
-            <planeGeometry args={[60,60, 20, 20]}/>
-            <meshBasicMaterial color="blue" wireframe side={THREE.DoubleSide}/>
-          </mesh>
-          <MenuItems/>
-        </Canvas>
+    <Canvas dpr={[1, 2]}>  
+      <mesh position={[0 ,0 ,-20]}>
+        <planeGeometry args={[60,60, 20, 20]}/>
+        <meshBasicMaterial color="blue" wireframe side={THREE.DoubleSide}/>
+      </mesh>
+      <MenuItems/>
+    </Canvas>
   )
 }
 
